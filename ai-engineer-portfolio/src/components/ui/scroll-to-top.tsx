@@ -36,7 +36,7 @@ const ScrollToTop: React.FC = () => {
           transition={{ duration: 0.2 }}
           onClick={scrollToTop}
           className="fixed bottom-6 right-6 p-3 rounded-full bg-violet-600 text-white shadow-lg hover:bg-violet-700 focus:outline-none z-50"
-          aria-label="Scroll to top"
+          aria-label="Volver arriba"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >

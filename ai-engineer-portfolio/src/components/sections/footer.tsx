@@ -2,7 +2,7 @@ import type React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Github, Linkedin, Twitter, Mail, MapPin, Phone } from 'lucide-react';
+import { Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-4">
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-violet-400" />
-                <a href="mailto:contact@aidev.com" className="hover:text-violet-400 transition-colors">
+                <a href="mailto:claudio.alcaman@gmail.com" className="hover:text-violet-400 transition-colors">
                   claudio.alcaman@gmail.com
                 </a>
               </li>
@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
 
             <div className="flex gap-4">
               <motion.a
-                href="https://github.com"
+                href="https://github.com/claudxfiles"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ y: -5, color: '#fff' }}
@@ -51,22 +51,13 @@ const Footer: React.FC = () => {
                 <Github className="h-5 w-5" />
               </motion.a>
               <motion.a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/claudio-alcaman-morales-7b0653135/"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ y: -5, color: '#fff' }}
                 className="bg-gray-800 p-3 rounded-full text-gray-400 hover:text-white transition-colors"
               >
                 <Linkedin className="h-5 w-5" />
-              </motion.a>
-              <motion.a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ y: -5, color: '#fff' }}
-                className="bg-gray-800 p-3 rounded-full text-gray-400 hover:text-white transition-colors"
-              >
-                <Twitter className="h-5 w-5" />
               </motion.a>
             </div>
           </motion.div>
