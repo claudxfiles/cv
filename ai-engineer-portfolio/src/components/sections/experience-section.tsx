@@ -19,7 +19,7 @@ const experienceHistory: ExperienceItem[] = [
     role: 'Fundador y Desarrollador Principal',
     dates: '2025 - actualidad',
     description: [
-      'Fundé SoulDream y lideré el desarrollo integral del SaaS (souldream.cl), una plataforma innovadora para la exploración y comprensión de los sueños.',
+      'Fundé SoulDream y lideré el desarrollo integral del SaaS (souldream.cl), una SoulDream AI - Plataforma All-in-One para Gestión Personal. SoulDream AI es una plataforma integral para la gestión personal que combina tareas, hábitos, finanzas, fitness y más en una sola aplicación, potenciada por inteligencia artificial.',
       'Dirigí todas las fases del proyecto, desde la concepción de la idea, planificación estratégica y diseño de arquitectura, hasta el desarrollo full-stack y la implementación de funcionalidades clave.',
       'Responsable del desarrollo completo (front-end con React, back-end con Node.js), la integración de componentes de Inteligencia Artificial, la gestión de bases de datos y el diseño de APIs.',
       'Orquesté el despliegue exitoso y el mantenimiento continuo de la aplicación en un entorno de producción, asegurando su escalabilidad, robustez y una óptima experiencia de usuario.'
