@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Profesional - Ingeniero de IA y Especialista en Aprendizaje Automático</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+        .skill-bar {
+            height: 8px;
+            background-color: #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #3b82f6, #1e40af);
+            border-radius: 4px;
+        }
+        .section-divider {
+            border-top: 2px solid #e5e7eb;
+            margin: 2rem 0;
+        }
+        @media print {
+            body { margin: 0; padding: 0; }
+            .no-print { display: none; }
+        }
+    </style>
+    <script>
+        function descargarCV() {
+            // Ocultar el botón de descarga para que no aparezca en el PDF
+            const botonDescarga = document.getElementById('botonDescargaCV');
+            if (botonDescarga) {
+                botonDescarga.style.display = 'none';
+            }
+            window.print();
+            // Volver a mostrar el botón después de la impresión/descarga
+            if (botonDescarga) {
+                botonDescarga.style.display = 'inline-flex';
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-5xl mx-auto bg-white shadow-lg">
+        <!-- Header -->
+        <header class="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-8">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-4xl font-bold mb-2">Ingeniero de IA y Especialista en Aprendizaje Automático</h1>
+                    <p class="text-xl opacity-90">Construyendo sistemas inteligentes que transforman el futuro</p>
+                    <p class="text-lg mt-4 opacity-80">Me especializo en diseñar, desarrollar e implementar soluciones avanzadas de IA que resuelven problemas complejos e impulsan la innovación.</p>
+                </div>
+                <div class="text-right">
+                    <div class="mb-2"><i class="fas fa-envelope mr-2"></i>presentandflow.cl</div>
+                    <div class="mb-2"><i class="fas fa-globe mr-2"></i>souldream.cl</div>
+                    <div><i class="fab fa-linkedin mr-2"></i>LinkedIn Profile</div>
+                    <button id="botonDescargaCV" onclick="descargarCV()" class="mt-4 bg-white text-blue-700 font-semibold py-2 px-4 rounded-lg shadow hover:bg-blue-50 transition-colors no-print">
+                        <i class="fas fa-download mr-2"></i>Descargar CV
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="p-8">
+            <!-- About Section -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-blue-600 pb-2">
+                    <i class="fas fa-user mr-2 text-blue-600"></i>Acerca de Mí
+                </h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Soy Ingeniero Civil Industrial con especialización en Ciencia de Datos, Ingeniería de Datos y Cloud Computing. Cuento con diplomados en Data Science y Data Engineering, además de certificaciones en Google Cloud Platform (GCP) y Amazon Web Services (AWS).
+                </p>
+                <p class="text-gray-700 leading-relaxed mt-4">
+                    Actualmente, me desempeño como Analista IT en Prevención de Fraudes en el Banco BCI, donde desarrollo modelos predictivos, automatización de procesos y análisis de datos para la detección de patrones fraudulentos. Paralelamente, fundé y dirijo SoulDream (souldream.cl), una innovadora aplicación SaaS donde he liderado todo el ciclo de desarrollo, desde la concepción hasta el despliegue, aplicando mis conocimientos en desarrollo full-stack y la integración de IA.
+                </p>
+                <p class="text-gray-700 leading-relaxed mt-4">
+                    Mi enfoque se basa en la optimización de procesos mediante datos, integrando soluciones en la nube para mejorar la eficiencia y escalabilidad de los sistemas, tanto en entornos corporativos como en mis propios emprendimientos tecnológicos.
+                </p>
+            </section>
+
+            <!-- Experience Section -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-blue-600 pb-2">
+                    <i class="fas fa-briefcase mr-2 text-blue-600"></i>Experiencia Laboral
+                </h2>
+                
+                <div class="space-y-6">
+                    <!-- SoulDream -->
+                    <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-blue-600">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-800">Fundador y Desarrollador Principal</h3>
+                                <p class="text-blue-600 font-medium">SoulDream</p>
+                            </div>
+                            <span class="text-sm text-gray-600 bg-white px-3 py-1 rounded-full">2025 - actualidad</span>
+                        </div>
+                        <p class="text-gray-600 mb-2"><i class="fas fa-map-marker-alt mr-2"></i>Remoto / Chile (Emprendimiento / SaaS)</p>
+                        <ul class="text-gray-700 space-y-2">
+                            <li>• Fundé SoulDream y lideré el desarrollo integral del SaaS (souldream.cl), una plataforma innovadora para la exploración y comprensión de los sueños.</li>
+                            <li>• Dirigí todas las fases del proyecto, desde la concepción de la idea, planificación estratégica y diseño de arquitectura, hasta el desarrollo full-stack y la implementación de funcionalidades clave.</li>
+                            <li>• Responsable del desarrollo completo (front-end con React, back-end con Node.js), la integración de componentes de Inteligencia Artificial, la gestión de bases de datos y el diseño de APIs.</li>
+                            <li>• Orquesté el despliegue exitoso y el mantenimiento continuo de la aplicación en un entorno de producción, asegurando su escalabilidad, robustez y una óptima experiencia de usuario.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Banco BCI Senior -->
+                    <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-green-600">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-800">Senior Fraud Specialist</h3>
+                                <p class="text-green-600 font-medium">Banco Bci</p>
+                            </div>
+                            <span class="text-sm text-gray-600 bg-white px-3 py-1 rounded-full">may. 2024 - actualidad</span>
+                        </div>
+                        <p class="text-gray-600 mb-2"><i class="fas fa-map-marker-alt mr-2"></i>Híbrido (Jornada completa)</p>
+                        <ul class="text-gray-700 space-y-2">
+                            <li>• Como Senior Fraud Specialist, lidero iniciativas estratégicas para la optimización continua de los sistemas de prevención de fraudes, aplicando mi experiencia avanzada en el ciclo completo de datos.</li>
+                            <li>• Desarrollo y refino modelos predictivos complejos y automatizo procesos críticos utilizando Python, SQL, Airflow y BigQuery, para la detección proactiva y el análisis sofisticado de patrones fraudulentos.</li>
+                            <li>• Diseño y gestiono pipelines de datos (ETL/ELT) robustos y escalables, integrando soluciones en plataformas cloud (GCP/AWS) para potenciar las capacidades analíticas del equipo.</li>
+                            <li>• Transformo datos complejos en insights accionables mediante herramientas de visualización como Power BI y Tableau, facilitando la toma de decisiones estratégicas a nivel gerencial.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Banco BCI Fraud Specialist -->
+                    <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-yellow-600">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-800">Fraud Specialist Riesgo no Financiero</h3>
+                                <p class="text-yellow-600 font-medium">Banco Bci</p>
+                            </div>
+                            <span class="text-sm text-gray-600 bg-white px-3 py-1 rounded-full">sept. 2022 - may. 2024</span>
+                        </div>
+                        <p class="text-gray-600 mb-2"><i class="fas fa-map-marker-alt mr-2"></i>Chile (Jornada completa)</p>
+                        <ul class="text-gray-700 space-y-2">
+                            <li>• Realicé investigaciones de profundidad en áreas relacionadas con prevención de fraudes y riesgos no financieros.</li>
+                            <li>• Lideré la creación de un sistema de análisis de riesgo basado en datos, que permite a la empresa evaluar y controlar la exposición a riesgos en todos los niveles.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Entel -->
+                    <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-purple-600">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-800">Analista de datos</h3>
+                                <p class="text-purple-600 font-medium">Entel</p>
+                            </div>
+                            <span class="text-sm text-gray-600 bg-white px-3 py-1 rounded-full">mar. 2022 - sept. 2022</span>
+                        </div>
+                        <p class="text-gray-600 mb-2"><i class="fas fa-map-marker-alt mr-2"></i>Av Costanera Sur 2760, Las Condes</p>
+                        <ul class="text-gray-700 space-y-2">
+                            <li>• Consolidar y analizar datos provenientes de distintas fuentes de información.</li>
+                            <li>• Crear Dashboards, paneles y automatizar la generación de informes.</li>
+                            <li>• Analizar procedimientos internos e identificar posibles mejoras.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-blue-600 pb-2">
+                    <i class="fas fa-project-diagram mr-2 text-blue-600"></i>Proyectos Destacados
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">SoulDream</h3>
+                        <p class="text-gray-600 mb-4">Una aplicación para explorar y entender los sueños.</p>
+                        <div class="flex space-x-2">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">SaaS</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">React</span>
+                            <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm">Node.js</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Pet Hotel</h3>
+                        <p class="text-gray-600 mb-4">Una aplicación web para un hotel de mascotas.</p>
+                        <div class="flex space-x-2">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">TypeScript</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">React</span>
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm">TailwindCSS</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Análisis de Jardines APIs</h3>
+                        <p class="text-gray-600 mb-4">APIs para una aplicación relacionada con el análisis de jardines.</p>
+                        <div class="flex space-x-2">
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">API</span>
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">Python</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Infraestructura AI/Backend</h3>
+                        <p class="text-gray-600 mb-4">Configuración y gestión de servidores, bases de datos, y despliegue de modelos de IA.</p>
+                        <div class="flex space-x-2">
+                            <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">Docker</span>
+                            <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-sm">Linux</span>
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">CI/CD</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-blue-600 pb-2">
+                    <i class="fas fa-cogs mr-2 text-blue-600"></i>Habilidades Técnicas
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">IA y Aprendizaje Automático</h3>
+                        <div class="space-y-3">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm text-gray-700">Machine Learning</span>
+                                    <span class="text-sm text-gray-600">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm text-gray-700">Deep Learning</span>
+                                    <span class="text-sm text-gray-600">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm text-gray-700">Modelos Predictivos</span>
+                                    <span class="text-sm text-gray-600">92%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 92%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4 mt-6">Lenguajes de Programación</h3>
+                        <div class="space-y-3">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm text-gray-700">Python</span>
+                                    <span class="text-sm text-gray-600">95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm text-gray-700">SQL</span>
+                                    <span class="text-sm text-gray-600">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm text-gray-700">JavaScript/TypeScript</span>
+                                    <span class="text-sm text-gray-600">88%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 88%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Nube y DevOps</h3>
+                        <div class="space-y-3">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm text-gray-700">Google Cloud Platform</span>
+                                    <span class="text-sm text-gray-600">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm text-gray-700">Amazon Web Services</span>
+                                    <span class="text-sm text-gray-600">82%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 82%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm text-gray-700">Docker</span>
+                                    <span class="text-sm text-gray-600">88%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 88%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4 mt-6">Herramientas de Datos</h3>
+                        <div class="space-y-3">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm text-gray-700">BigQuery</span>
+                                    <span class="text-sm text-gray-600">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm text-gray-700">Airflow</span>
+                                    <span class="text-sm text-gray-600">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm text-gray-700">Power BI / Tableau</span>
+                                    <span class="text-sm text-gray-600">88%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 88%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-blue-600 pb-2">
+                    <i class="fas fa-rocket mr-2 text-blue-600"></i>Servicios Especializados
+                </h2>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="text-center p-6 bg-blue-50 rounded-lg">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-brain text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Desarrollo de IA</h3>
+                        <p class="text-gray-600">Construyendo modelos y aplicaciones de IA personalizados con frameworks modernos</p>
+                    </div>
+
+                    <div class="text-center p-6 bg-green-50 rounded-lg">
+                        <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-chart-line text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Aprendizaje Automático</h3>
+                        <p class="text-gray-600">Creando pipelines y sistemas de ML que aprenden y se adaptan</p>
+                    </div>
+
+                    <div class="text-center p-6 bg-purple-50 rounded-lg">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-network-wired text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Aprendizaje Profundo</h3>
+                        <p class="text-gray-600">Diseñando redes neuronales para el reconocimiento de patrones complejos</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white p-6 text-center">
+            <p class="mb-2">Ingeniero de IA y Especialista en Aprendizaje Automático</p>
+            <p class="text-gray-400">En constante aprendizaje y perfeccionamiento para ampliar oportunidades en el ámbito Data & AI</p>
+            <div class="mt-4 flex justify-center space-x-4">
+                <span class="text-blue-400"><i class="fas fa-envelope mr-2"></i>Contacto disponible</span>
+                <span class="text-blue-400"><i class="fas fa-globe mr-2"></i>presentandflow.cl</span>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
