@@ -17,10 +17,9 @@ const Footer: React.FC = () => {
             className="space-y-8"
           >
             <div>
-              <h2 className="text-3xl font-bold text-white mb-4">Let's Connect</h2>
+              <h2 className="text-3xl font-bold text-white mb-4">Conectemos</h2>
               <p className="text-gray-400 max-w-md">
-                I'm always interested in new opportunities, collaborations, and challenges.
-                Feel free to reach out if you want to work together or just have a chat.
+                Siempre estoy interesado en nuevas oportunidades, colaboraciones y desafíos. No dudes en contactarme si quieres que trabajemos juntos o simplemente charlar.
               </p>
             </div>
 
@@ -28,16 +27,16 @@ const Footer: React.FC = () => {
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-violet-400" />
                 <a href="mailto:contact@aidev.com" className="hover:text-violet-400 transition-colors">
-                  contact@aidev.com
+                  claudio.alcaman@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-violet-400" />
-                <span>+1 (555) 123-4567</span>
+                <span>+569 56020860</span>
               </li>
               <li className="flex items-center gap-3">
                 <MapPin className="h-5 w-5 text-violet-400" />
-                <span>San Francisco, CA</span>
+                <span>Santiago, Chile</span>
               </li>
             </ul>
 
@@ -80,60 +79,60 @@ const Footer: React.FC = () => {
           >
             <Card className="bg-gray-800 border-gray-700 shadow-xl">
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-6">Send a Message</h3>
+                <h3 className="text-xl font-semibold text-white mb-6">Enviar un Mensaje</h3>
                 <form className="space-y-4">
                   <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                     <div className="space-y-2">
                       <label htmlFor="name" className="text-sm font-medium text-gray-400">
-                        Name
+                        Nombre
                       </label>
                       <input
                         id="name"
                         type="text"
                         className="w-full px-3 py-2 rounded-md bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent"
-                        placeholder="Your name"
+                        placeholder="Tu nombre"
                       />
                     </div>
                     <div className="space-y-2">
                       <label htmlFor="email" className="text-sm font-medium text-gray-400">
-                        Email
+                        Correo Electrónico
                       </label>
                       <input
                         id="email"
                         type="email"
                         className="w-full px-3 py-2 rounded-md bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent"
-                        placeholder="Your email"
+                        placeholder="Tu correo electrónico"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
                     <label htmlFor="subject" className="text-sm font-medium text-gray-400">
-                      Subject
+                      Asunto
                     </label>
                     <input
                       id="subject"
                       type="text"
                       className="w-full px-3 py-2 rounded-md bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent"
-                      placeholder="Subject"
+                      placeholder="Asunto"
                     />
                   </div>
 
                   <div className="space-y-2">
                     <label htmlFor="message" className="text-sm font-medium text-gray-400">
-                      Message
+                      Mensaje
                     </label>
                     <textarea
                       id="message"
                       rows={4}
                       className="w-full px-3 py-2 rounded-md bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent"
-                      placeholder="Your message"
+                      placeholder="Tu mensaje"
                     />
                   </div>
 
                   <div>
                     <Button className="w-full bg-violet-600 hover:bg-violet-700">
-                      Send Message
+                      Enviar Mensaje
                     </Button>
                   </div>
                 </form>
@@ -149,9 +148,9 @@ const Footer: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="border-t border-gray-800 mt-16 pt-8 text-center text-gray-500 text-sm"
         >
-          <p>&copy; {new Date().getFullYear()} AIDev. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} AIDev. Todos los derechos reservados.</p>
           <p className="mt-2">
-            Created with Next.js, Tailwind CSS, and Framer Motion.
+            Creado con Next.js, Tailwind CSS y Framer Motion.
           </p>
         </motion.div>
       </div>

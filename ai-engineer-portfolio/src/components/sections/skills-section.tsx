@@ -57,11 +57,11 @@ const groupedSkills = skills.reduce(
 
 // Category titles
 const categoryTitles = {
-  ai: 'AI & Machine Learning',
-  data: 'Data Science',
-  programming: 'Programming Languages',
-  cloud: 'Cloud & DevOps',
-  tools: 'Tools & Frameworks',
+  ai: 'IA y Aprendizaje Automático',
+  data: 'Ciencia de Datos',
+  programming: 'Lenguajes de Programación',
+  cloud: 'Nube y DevOps',
+  tools: 'Herramientas y Frameworks',
 };
 
 const SkillCard: React.FC<{ skill: Skill }> = ({ skill }) => {
@@ -93,7 +93,7 @@ const SkillCard: React.FC<{ skill: Skill }> = ({ skill }) => {
             />
           </div>
           <div className="mt-2 flex justify-between text-sm text-gray-500 dark:text-gray-400">
-            <span>Proficiency</span>
+            <span>Nivel</span>
             <span>{skill.level}%</span>
           </div>
         </CardContent>
@@ -114,10 +114,10 @@ const SkillsSection: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-            My Technical Skills
+            Mis Habilidades Técnicas
           </h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            A comprehensive overview of my technical expertise in AI, machine learning, and software development.
+            Una descripción general completa de mi experiencia técnica en IA, aprendizaje automático y desarrollo de software.
           </p>
         </motion.div>
 
