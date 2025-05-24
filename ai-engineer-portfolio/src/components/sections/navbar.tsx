@@ -6,11 +6,11 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, X, Github, Linkedin, Twitter } from 'lucide-react';
 
 const navItems = [
-  { name: 'Home', href: '#home' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Experience', href: '#experience' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Inicio', href: '#home' },
+  { name: 'Proyectos', href: '#projects' },
+  { name: 'Habilidades', href: '#skills' },
+  { name: 'Experiencia', href: '#experience' },
+  { name: 'Contacto', href: '#contact' },
 ];
 
 const Navbar: React.FC = () => {
@@ -117,7 +117,7 @@ const Navbar: React.FC = () => {
               </motion.a>
             ))}
             <Button className="bg-violet-600 hover:bg-violet-700">
-              Download CV
+              Descargar CV
             </Button>
           </nav>
 
@@ -133,7 +133,7 @@ const Navbar: React.FC = () => {
               <SheetContent side="right" className="w-[300px] sm:w-[400px]">
                 <div className="flex flex-col h-full">
                   <div className="flex justify-between items-center py-4">
-                    <span className="font-bold text-xl">Menu</span>
+                    <span className="font-bold text-xl">Menú</span>
                     <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
                       <X className="h-6 w-6" />
                     </Button>
