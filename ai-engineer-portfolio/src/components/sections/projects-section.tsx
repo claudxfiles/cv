@@ -20,7 +20,7 @@ const projects: Project[] = [
   {
     id: 'souldream',
     title: 'SoulDream',
-    description: 'Una aplicación para explorar y entender los sueños.',
+    description: 'SoulDream AI - Plataforma All-in-One para Gestión Personal. SoulDream AI es una plataforma integral para la gestión personal que combina tareas, hábitos, finanzas, fitness y más en una sola aplicación, potenciada por inteligencia artificial.',
     tags: ['React', 'Node.js', 'IA'],
     image: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0',
     link: 'https://www.souldream.cl/',
