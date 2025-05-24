@@ -1,10 +1,53 @@
 import type React from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 
 const Footer: React.FC = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+  const [isSending, setIsSending] = useState(false);
+  const [formStatus, setFormStatus] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSending(true);
+    setFormStatus(null);
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setFormStatus({ type: 'success', message: '¡Mensaje enviado con éxito!' });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setFormStatus({ type: 'error', message: result.error || 'Error al enviar el mensaje. Intenta de nuevo.' });
+      }
+    } catch (error) {
+      console.error("Error en handleSubmit:", error);
+      setFormStatus({ type: 'error', message: 'Error al conectar con el servidor. Intenta de nuevo.' });
+    }
+    setIsSending(false);
+  };
+
   return (
     <footer className="bg-gray-900 text-gray-300" id="contact">
       <div className="container mx-auto px-4 py-16">
@@ -71,7 +114,7 @@ const Footer: React.FC = () => {
             <Card className="bg-gray-800 border-gray-700 shadow-xl">
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold text-white mb-6">Enviar un Mensaje</h3>
-                <form className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                     <div className="space-y-2">
                       <label htmlFor="name" className="text-sm font-medium text-gray-400">
@@ -82,6 +125,9 @@ const Footer: React.FC = () => {
                         type="text"
                         className="w-full px-3 py-2 rounded-md bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent"
                         placeholder="Tu nombre"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
                       />
                     </div>
                     <div className="space-y-2">
@@ -93,6 +139,9 @@ const Footer: React.FC = () => {
                         type="email"
                         className="w-full px-3 py-2 rounded-md bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent"
                         placeholder="Tu correo electrónico"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
                       />
                     </div>
                   </div>
@@ -106,6 +155,9 @@ const Footer: React.FC = () => {
                       type="text"
                       className="w-full px-3 py-2 rounded-md bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent"
                       placeholder="Asunto"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      required
                     />
                   </div>
 
@@ -118,14 +170,24 @@ const Footer: React.FC = () => {
                       rows={4}
                       className="w-full px-3 py-2 rounded-md bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent"
                       placeholder="Tu mensaje"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
                     />
                   </div>
 
                   <div>
-                    <Button className="w-full bg-violet-600 hover:bg-violet-700">
-                      Enviar Mensaje
+                    <Button type="submit" className="w-full bg-violet-600 hover:bg-violet-700" disabled={isSending}>
+                      {isSending ? 'Enviando...' : 'Enviar Mensaje'}
                     </Button>
                   </div>
+                  {formStatus && (
+                    <div className={`mt-4 text-sm ${
+                      formStatus.type === 'success' ? 'text-green-400' : 'text-red-400'
+                    }`}>
+                      {formStatus.message}
+                    </div>
+                  )}
                 </form>
               </CardContent>
             </Card>
