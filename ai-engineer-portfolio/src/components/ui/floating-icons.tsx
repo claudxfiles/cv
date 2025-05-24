@@ -1,6 +1,7 @@
 import type React from 'react';
 import { motion } from 'framer-motion';
 import { Brain, Cpu, PieChart, Database, BarChart, Sigma, Bot, Network, Github } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 const iconComponents = [
   Brain, Cpu, PieChart, Database, BarChart, Sigma, Bot, Network, Github
@@ -42,25 +43,39 @@ const FloatingIcon: React.FC<FloatingIconProps> = ({ Icon, size, position, delay
   );
 };
 
+interface GeneratedIconProps {
+  Icon: React.ElementType;
+  size: number;
+  position: { x: string; y: string };
+  delay: number;
+  id: string;
+}
+
 const FloatingIcons: React.FC = () => {
-  // Generate random icons with random positions
-  const icons = Array.from({ length: 12 }).map((_, index) => {
-    const Icon = iconComponents[index % iconComponents.length];
-    const size = Math.floor(Math.random() * 30) + 20; // Size between 20-50px
+  const [generatedIcons, setGeneratedIcons] = useState<GeneratedIconProps[]>([]);
 
-    // Random positions that don't interfere too much with content
-    const x = `${Math.floor(Math.random() * 85) + 5}%`;
-    const y = `${Math.floor(Math.random() * 60) + 5}%`;
+  useEffect(() => {
+    const icons = Array.from({ length: 12 }).map((_, index) => {
+      const Icon = iconComponents[index % iconComponents.length];
+      const size = Math.floor(Math.random() * 30) + 20;
 
-    // Random delay so they don't all animate together
-    const delay = Math.random() * 5;
+      const x = `${Math.floor(Math.random() * 85) + 5}%`;
+      const y = `${Math.floor(Math.random() * 60) + 5}%`;
 
-    return { Icon, size, position: { x, y }, delay, id: `icon-${index}` };
-  });
+      const delay = Math.random() * 5;
+
+      return { Icon, size, position: { x, y }, delay, id: `icon-${index}` };
+    });
+    setGeneratedIcons(icons);
+  }, []);
+
+  if (generatedIcons.length === 0) {
+    return null;
+  }
 
   return (
     <div className="fixed inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
-      {icons.map((icon) => (
+      {generatedIcons.map((icon) => (
         <FloatingIcon
           key={icon.id}
           Icon={icon.Icon}
