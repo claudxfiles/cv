@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, X, Github, Linkedin, Twitter } from 'lucide-react';
+import { Menu, X, Github, Linkedin } from 'lucide-react';
 
 const navItems = [
   { name: 'Inicio', href: '#home' },
@@ -156,14 +156,15 @@ const Navbar: React.FC = () => {
                     ))}
                   </div>
                   <div className="py-4 flex gap-4 border-t border-gray-200 dark:border-gray-700">
-                    <Button variant="ghost" size="icon" className="rounded-full">
-                      <Github className="h-5 w-5" />
+                    <Button variant="ghost" size="icon" className="rounded-full" asChild>
+                      <a href="https://github.com/claudxfiles" target="_blank" rel="noopener noreferrer">
+                        <Github className="h-5 w-5" />
+                      </a>
                     </Button>
-                    <Button variant="ghost" size="icon" className="rounded-full">
-                      <Linkedin className="h-5 w-5" />
-                    </Button>
-                    <Button variant="ghost" size="icon" className="rounded-full">
-                      <Twitter className="h-5 w-5" />
+                    <Button variant="ghost" size="icon" className="rounded-full" asChild>
+                      <a href="https://www.linkedin.com/in/claudio-alcaman-morales-7b0653135/" target="_blank" rel="noopener noreferrer">
+                        <Linkedin className="h-5 w-5" />
+                      </a>
                     </Button>
                   </div>
                 </div>
