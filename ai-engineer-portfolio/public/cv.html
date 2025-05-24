@@ -32,23 +32,75 @@
             .no-print { display: none; }
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBsfWx2JSS1ceFJmrCVGEFpbImR6V4NE7V6iwk4SJHOg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         function descargarCV() {
-            // Ocultar el botón de descarga para que no aparezca en el PDF
             const botonDescarga = document.getElementById('botonDescargaCV');
-            if (botonDescarga) {
-                botonDescarga.style.display = 'none';
+            const cvContainer = document.getElementById('cvContainer');
+
+            const showButton = () => {
+                if (botonDescarga) {
+                    botonDescarga.style.display = 'inline-flex';
+                }
+            };
+
+            const hideButton = () => {
+                if (botonDescarga) {
+                    botonDescarga.style.display = 'none';
+                }
+            };
+
+            const performPrintFallback = (isButtonAlreadyHidden = false) => {
+                if (!isButtonAlreadyHidden) {
+                    hideButton();
+                }
+                alert("No se pudo generar el PDF directamente. Se abrirá el diálogo de impresión para guardarlo como PDF.");
+                try {
+                    window.print();
+                } finally {
+                    showButton();
+                }
+            };
+
+            if (typeof html2pdf === 'undefined') {
+                console.warn('html2pdf.js no está cargado. Usando window.print() como fallback.');
+                performPrintFallback(false);
+                return;
             }
-            window.print();
-            // Volver a mostrar el botón después de la impresión/descarga
-            if (botonDescarga) {
-                botonDescarga.style.display = 'inline-flex';
+
+            if (!cvContainer) {
+                console.error('Elemento cvContainer no encontrado. Usando window.print() como fallback.');
+                performPrintFallback(false);
+                return;
             }
+
+            hideButton();
+
+            const opt = {
+              margin:       [0.5, 0.5, 0.5, 0.5], // inches [top, left, bottom, right]
+              filename:     'CV_AI_Especialista_Aprendizaje_Automatico.pdf',
+              image:        { type: 'jpeg', quality: 0.98 },
+              html2canvas:  {
+                  scale: 2,
+                  logging: false,
+                  useCORS: true
+              },
+              jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+
+            html2pdf().from(cvContainer).set(opt).save()
+                .then(() => {
+                    showButton();
+                })
+                .catch((error) => {
+                    console.error("Error al generar el PDF con html2pdf:", error);
+                    performPrintFallback(true); 
+                });
         }
     </script>
 </head>
 <body class="bg-gray-50 text-gray-800">
-    <div class="max-w-5xl mx-auto bg-white shadow-lg">
+    <div id="cvContainer" class="max-w-5xl mx-auto bg-white shadow-lg">
         <!-- Header -->
         <header class="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-8">
             <div class="flex items-center justify-between">

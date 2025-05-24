@@ -116,9 +116,14 @@ const Navbar: React.FC = () => {
                 {item.name}
               </motion.a>
             ))}
-            <Button className="bg-violet-600 hover:bg-violet-700">
+            <a
+              href="/cv.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-violet-600 text-primary-foreground hover:bg-violet-700 h-10 px-4 py-2"
+            >
               Descargar CV
-            </Button>
+            </a>
           </nav>
 
           <div className="flex md:hidden">
