@@ -20,8 +20,8 @@ const projects: Project[] = [
   {
     id: 'souldream',
     title: 'SoulDream',
-    description: 'An application for exploring and understanding dreams.',
-    tags: ['React', 'Node.js', 'AI'],
+    description: 'Una aplicación para explorar y entender los sueños.',
+    tags: ['React', 'Node.js', 'IA'],
     image: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0',
     link: 'https://www.souldream.cl/',
     github: 'https://github.com/claudxfiles/SoulDream',
@@ -30,7 +30,7 @@ const projects: Project[] = [
   {
     id: 'analisis-de-jardines-apis',
     title: 'Análisis de Jardines APIs',
-    description: 'APIs for an application related to garden analysis.',
+    description: 'APIs para una aplicación relacionada con el análisis de jardines.',
     tags: ['API', 'Python', 'Flask'],
     image: 'https://images.unsplash.com/photo-1523348837708-15d4a09cfac2',
     link: 'https://github.com/claudxfiles/analisis-de-jardines-apis',
@@ -39,7 +39,7 @@ const projects: Project[] = [
   {
     id: 'app-learning',
     title: 'App Learning',
-    description: 'A learning application project.',
+    description: 'Un proyecto de aplicación de aprendizaje.',
     tags: ['TypeScript', 'React', 'Vite'],
     image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570',
     link: 'https://github.com/claudxfiles/app_learning',
@@ -49,7 +49,7 @@ const projects: Project[] = [
   {
     id: 'pet-hotel1',
     title: 'Pet Hotel 1',
-    description: 'A web application for a pet hotel.',
+    description: 'Una aplicación web para un hotel de mascotas.',
     tags: ['TypeScript', 'React', 'TailwindCSS'],
     image: 'https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb',
     link: 'https://github.com/claudxfiles/Pet-Hotel1',
@@ -78,10 +78,10 @@ const ProjectsSection: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-            Featured Projects
+            Proyectos Destacados
           </h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            A selection of my work in AI and machine learning. Each project demonstrates different skills and approaches to solving complex problems.
+            Una selección de mi trabajo en IA y aprendizaje automático. Cada proyecto demuestra diferentes habilidades y enfoques para resolver problemas complejos.
           </p>
         </motion.div>
 
@@ -117,7 +117,7 @@ const ProjectsSection: React.FC = () => {
                   {project.featured && (
                     <div className="absolute top-3 right-3 bg-violet-600 text-white text-xs px-2 py-1 rounded-md flex items-center">
                       <Star className="h-3 w-3 mr-1" />
-                      Featured
+                      Destacado
                     </div>
                   )}
                 </div>
@@ -138,16 +138,16 @@ const ProjectsSection: React.FC = () => {
                         </HoverCardTrigger>
                         <HoverCardContent className="w-48 p-3">
                           <p className="text-sm">
-                            {tag === 'TensorFlow' && 'Popular deep learning framework'}
-                            {tag === 'React' && 'Frontend JavaScript library'}
-                            {tag === 'D3.js' && 'Data visualization library'}
-                            {tag === 'Python' && 'General-purpose programming language'}
-                            {tag === 'PyTorch' && 'Deep learning framework'}
-                            {tag === 'spaCy' && 'Natural language processing library'}
-                            {tag === 'OpenAI Gym' && 'Toolkit for reinforcement learning'}
-                            {tag === 'JAX' && 'High-performance numerical computing library'}
-                            {tag === 'Stable Diffusion' && 'Latent diffusion model for image generation'}
-                            {tag === 'Flask' && 'Lightweight Python web framework'}
+                            {tag === 'TensorFlow' && 'Framework popular de aprendizaje profundo'}
+                            {tag === 'React' && 'Biblioteca de JavaScript para frontend'}
+                            {tag === 'D3.js' && 'Biblioteca para visualización de datos'}
+                            {tag === 'Python' && 'Lenguaje de programación de propósito general'}
+                            {tag === 'PyTorch' && 'Framework de aprendizaje profundo'}
+                            {tag === 'spaCy' && 'Biblioteca para procesamiento de lenguaje natural'}
+                            {tag === 'OpenAI Gym' && 'Kit de herramientas para aprendizaje por refuerzo'}
+                            {tag === 'JAX' && 'Biblioteca de computación numérica de alto rendimiento'}
+                            {tag === 'Stable Diffusion' && 'Modelo de difusión latente para generación de imágenes'}
+                            {tag === 'Flask' && 'Framework web ligero de Python'}
                           </p>
                         </HoverCardContent>
                       </HoverCard>
@@ -158,13 +158,13 @@ const ProjectsSection: React.FC = () => {
                 <CardFooter className="flex justify-between pt-4">
                   <Button variant="outline" size="sm" asChild>
                     <a href={project.link} target="_blank" rel="noopener noreferrer">
-                      View Demo <ExternalLink className="ml-2 h-4 w-4" />
+                      Ver Demo <ExternalLink className="ml-2 h-4 w-4" />
                     </a>
                   </Button>
                   {project.github && (
                     <Button variant="ghost" size="sm" asChild>
                       <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="mr-2 h-4 w-4" /> Code
+                        <Github className="mr-2 h-4 w-4" /> Código
                       </a>
                     </Button>
                   )}
@@ -182,7 +182,7 @@ const ProjectsSection: React.FC = () => {
           className="text-center mt-16"
         >
           <Button size="lg" variant="outline">
-            View All Projects <ArrowRight className="ml-2 h-4 w-4" />
+            Ver Todos los Proyectos <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </motion.div>
       </div>
