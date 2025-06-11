@@ -13,6 +13,7 @@ interface ExperienceItem {
 }
 
 const experienceHistory: ExperienceItem[] = [
+
   {
     id: 'souldream-saas',
     company: 'SoulDream',
