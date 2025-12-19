@@ -20,10 +20,9 @@ const experienceHistory: ExperienceItem[] = [
     role: 'Fundador y Desarrollador Principal',
     dates: '2025 - actualidad',
     description: [
-      'Fundé SoulDream y lideré el desarrollo integral del SaaS (souldream.cl), una SoulDream AI - Plataforma All-in-One para Gestión Personal. SoulDream AI es una plataforma integral para la gestión personal que combina tareas, hábitos, finanzas, fitness y más en una sola aplicación, potenciada por inteligencia artificial.',
-      'Dirigí todas las fases del proyecto, desde la concepción de la idea, planificación estratégica y diseño de arquitectura, hasta el desarrollo full-stack y la implementación de funcionalidades clave.',
-      'Responsable del desarrollo completo (front-end con React, back-end con Node.js), la integración de componentes de Inteligencia Artificial, la gestión de bases de datos y el diseño de APIs.',
-      'Orquesté el despliegue exitoso y el mantenimiento continuo de la aplicación en un entorno de producción, asegurando su escalabilidad, robustez y una óptima experiencia de usuario.'
+      'Liderazgo y desarrollo de una plataforma SaaS basada en inteligencia artificial, participando en todo el ciclo de vida del producto.',
+      'Diseño de arquitectura, integración de modelos de IA, análisis de datos y despliegue en entornos productivos cloud.',
+      'Experiencia directa en proyectos de IA aplicados a usuarios reales y toma de decisiones basada en datos.'
     ],
     location: 'Remoto / Chile',
     type: 'Emprendimiento / SaaS',
@@ -34,11 +33,10 @@ const experienceHistory: ExperienceItem[] = [
     role: 'Senior Fraud Specialist',
     dates: 'may. 2024 - actualidad',
     description: [
-      'Como Senior Fraud Specialist, lidero iniciativas estratégicas para la optimización continua de los sistemas de prevención de fraudes, aplicando mi experiencia avanzada en el ciclo completo de datos.',
-      'Desarrollo y refino modelos predictivos complejos y automatizo procesos críticos utilizando Python, SQL, Airflow y BigQuery, para la detección proactiva y el análisis sofisticado de patrones fraudulentos.',
-      'Diseño y gestiono pipelines de datos (ETL/ELT) robustos y escalables, integrando soluciones en plataformas cloud (GCP/AWS) para potenciar las capacidades analíticas del equipo.',
-      'Transformo datos complejos en insights accionables mediante herramientas de visualización como Power BI y Tableau, facilitando la toma de decisiones estratégicas a nivel gerencial.',
-      'Asumo un rol de mentoría técnica y colaboro en la definición de la hoja de ruta tecnológica para la prevención de fraudes, investigando y proponiendo la adopción de nuevas herramientas y metodologías.'
+      'Desarrollo y optimización de modelos predictivos orientados a la detección y mitigación de riesgos, utilizando Python y SQL.',
+      'Automatización de procesos analíticos y construcción de pipelines de datos en entornos cloud (GCP y AWS).',
+      'Análisis de grandes volúmenes de información para identificar patrones de riesgo y generar insights accionables para áreas de negocio y toma de decisiones estratégicas.',
+      'Apoyo a iniciativas transversales relacionadas con campañas y control de riesgo.'
     ],
     location: 'Híbrido',
     type: 'Jornada completa',
@@ -46,11 +44,12 @@ const experienceHistory: ExperienceItem[] = [
   {
     id: 'bci-fraud-specialist',
     company: 'Banco Bci',
-    role: 'Fraud Specialist Riesgo no Financiero',
+    role: 'Fraud Specialist Riesgo No Financiero',
     dates: 'sept. 2022 - may. 2024',
     description: [
-      'Realicé investigaciones de profundidad en áreas relacionadas con prevención de fraudes y riesgos no financieros.',
-      'Lideré la creación de un sistema de análisis de riesgo basado en datos, que permite a la empresa evaluar y controlar la exposición a riesgos en todos los niveles, presentando los datos de forma estructurada y comprensible para el usuario.'
+      'Investigación y análisis de riesgos no financieros mediante metodologías basadas en datos.',
+      'Desarrollo de sistemas de evaluación de riesgo que permitieron mejorar el control y monitoreo de exposiciones a nivel organizacional.',
+      'Trabajo colaborativo con áreas técnicas y de negocio para fortalecer procesos de prevención.'
     ],
     location: 'Chile',
     type: 'Jornada completa',
@@ -58,12 +57,12 @@ const experienceHistory: ExperienceItem[] = [
   {
     id: 'entel',
     company: 'Entel',
-    role: 'Analista de datos',
+    role: 'Analista de Datos',
     dates: 'mar. 2022 - sept. 2022 (7 meses)',
     description: [
-      'Consolidar y analizar datos provenientes de distintas fuentes de información.',
-      'Crear Dashboards, paneles y automatizar la generación de informes.',
-      'Analizar procedimientos internos e identificar posibles mejoras.'
+      'Consolidación y análisis de datos provenientes de múltiples fuentes.',
+      'Creación de dashboards e informes automatizados para el seguimiento de indicadores clave.',
+      'Identificación de oportunidades de mejora en procesos internos mediante análisis cuantitativo.'
     ],
     location: 'Av Costanera Sur 2760, las condes.',
     type: 'Jornada completa',

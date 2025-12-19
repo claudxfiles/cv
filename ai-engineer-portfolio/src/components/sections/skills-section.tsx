@@ -13,34 +13,29 @@ interface Skill {
 
 const skills: Skill[] = [
   // AI & ML
-  { id: 'tensorflow', name: 'TensorFlow', level: 90, icon: <Brain />, category: 'ai' },
-  { id: 'pytorch', name: 'PyTorch', level: 85, icon: <Brain />, category: 'ai' },
+  { id: 'ml', name: 'Machine Learning', level: 90, icon: <Brain />, category: 'ai' },
+  { id: 'ia-negocio', name: 'IA Aplicada a Negocio', level: 88, icon: <Brain />, category: 'ai' },
+  { id: 'modelos-predictivos', name: 'Modelos Predictivos', level: 92, icon: <Brain />, category: 'ai' },
+  { id: 'analisis-riesgo', name: 'Análisis de Riesgo', level: 90, icon: <Brain />, category: 'ai' },
   { id: 'scikit', name: 'Scikit-Learn', level: 95, icon: <Brain />, category: 'ai' },
-  { id: 'nlp', name: 'NLP', level: 80, icon: <Brain />, category: 'ai' },
-  { id: 'cv', name: 'Computer Vision', level: 75, icon: <Brain />, category: 'ai' },
 
   // Data
-  { id: 'pandas', name: 'Pandas', level: 95, icon: <Database />, category: 'data' },
-  { id: 'sql', name: 'SQL', level: 85, icon: <Database />, category: 'data' },
-  { id: 'spark', name: 'Apache Spark', level: 75, icon: <Database />, category: 'data' },
-  { id: 'etl', name: 'ETL', level: 80, icon: <Database />, category: 'data' },
-
-  // Programming
-  { id: 'python', name: 'Python', level: 95, icon: <Code />, category: 'programming' },
-  { id: 'js', name: 'JavaScript', level: 80, icon: <Code />, category: 'programming' },
-  { id: 'ts', name: 'TypeScript', level: 75, icon: <Code />, category: 'programming' },
-  { id: 'java', name: 'Java', level: 70, icon: <Code />, category: 'programming' },
+  { id: 'python', name: 'Python Avanzado', level: 95, icon: <Code />, category: 'data' },
+  { id: 'sql', name: 'SQL Avanzado', level: 90, icon: <Database />, category: 'data' },
+  { id: 'big-data', name: 'Análisis Grandes Volúmenes', level: 85, icon: <Database />, category: 'data' },
+  { id: 'automatizacion', name: 'Automatización de Procesos', level: 88, icon: <Database />, category: 'data' },
+  { id: 'etl', name: 'ETL/ELT', level: 85, icon: <Database />, category: 'data' },
 
   // Cloud & DevOps
-  { id: 'aws', name: 'AWS', level: 80, icon: <Server />, category: 'cloud' },
-  { id: 'docker', name: 'Docker', level: 85, icon: <Server />, category: 'cloud' },
-  { id: 'kubernetes', name: 'Kubernetes', level: 70, icon: <Server />, category: 'cloud' },
+  { id: 'gcp', name: 'Google Cloud Platform', level: 85, icon: <Server />, category: 'cloud' },
+  { id: 'bigquery', name: 'BigQuery', level: 88, icon: <Server />, category: 'cloud' },
+  { id: 'airflow', name: 'Airflow', level: 85, icon: <Server />, category: 'cloud' },
+  { id: 'aws', name: 'Amazon Web Services', level: 80, icon: <Server />, category: 'cloud' },
 
   // Tools & Frameworks
-  { id: 'git', name: 'Git', level: 90, icon: <Blocks />, category: 'tools' },
-  { id: 'react', name: 'React', level: 75, icon: <Blocks />, category: 'tools' },
-  { id: 'flask', name: 'Flask', level: 85, icon: <Blocks />, category: 'tools' },
-  { id: 'data-viz', name: 'Data Visualization', level: 80, icon: <LineChart />, category: 'tools' },
+  { id: 'powerbi', name: 'Power BI', level: 90, icon: <LineChart />, category: 'tools' },
+  { id: 'tableau', name: 'Tableau', level: 85, icon: <LineChart />, category: 'tools' },
+  { id: 'equipos', name: 'Trabajo Multidisciplinario', level: 90, icon: <Blocks />, category: 'tools' },
 ];
 
 // Group skills by category
