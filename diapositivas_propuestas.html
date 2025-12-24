@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuestas - NLP para Detección de Depresión</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        .slide {
+            width: 960px;
+            height: 720px;
+            background: white;
+            margin: 20px auto;
+            padding: 60px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            border-radius: 8px;
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .slide-header {
+            border-bottom: 4px solid #667eea;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .slide-title {
+            font-size: 36px;
+            color: #2c3e50;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .slide-subtitle {
+            font-size: 20px;
+            color: #7f8c8d;
+            font-weight: 300;
+        }
+
+        .slide-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            overflow-y: auto;
+        }
+
+        .section {
+            background: #f8f9fa;
+            padding: 15px;
+            border-left: 5px solid #667eea;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        .section-title {
+            font-size: 18px;
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .section-content {
+            font-size: 14px;
+            color: #34495e;
+            line-height: 1.5;
+        }
+
+        .section-content ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .section-content li {
+            margin-bottom: 8px;
+        }
+
+        .assumption-box {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+
+        .assumption-title {
+            font-weight: bold;
+            color: #856404;
+            margin-bottom: 8px;
+        }
+
+        .cover-slide {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .cover-slide .slide-title {
+            color: white;
+            font-size: 48px;
+            margin-bottom: 30px;
+        }
+
+        .cover-slide .slide-subtitle {
+            color: rgba(255,255,255,0.9);
+            font-size: 24px;
+            margin-bottom: 40px;
+        }
+
+        .cover-slide .context {
+            font-size: 18px;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        .risk-item {
+            color: #e74c3c;
+            font-weight: 500;
+        }
+
+        .recommendation-item {
+            color: #27ae60;
+            font-weight: 500;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .slide {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- DIAPOSITIVA 1: PORTADA -->
+    <div class="slide cover-slide">
+        <div class="slide-header" style="border: none;">
+            <div class="slide-title">Sistema de NLP para Detección de Depresión</div>
+            <div class="slide-subtitle">Análisis Crítico y Propuestas de Implementación</div>
+        </div>
+        <div class="context">
+            <p><strong>Contexto:</strong></p>
+            <p>Desarrollo de sistema de NLP para detección temprana de riesgo de depresión mediante análisis de transcripciones de sesiones paciente-psicólogo(a)</p>
+            <p style="margin-top: 30px; font-size: 16px; opacity: 0.9;">Basado en: "On the challenges of translating NLP research into commercial products" (Dahlmeier, 2017)</p>
+        </div>
+    </div>
+
+    <!-- DIAPOSITIVA 2: PROPUESTA DE VALOR - SUPUESTO 1 -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="slide-title">1. Propuesta de Valor - Supuesto 1</div>
+            <div class="slide-subtitle">Escenario: Presupuesto Amplio y Alta Madurez Digital</div>
+        </div>
+        <div class="slide-content">
+            <div class="section">
+                <div class="section-title">Supuestos Subyacentes</div>
+                <div class="section-content">
+                    <ul>
+                        <li><strong>Presupuesto:</strong> Amplio (recursos suficientes para desarrollo completo)</li>
+                        <li><strong>Madurez Digital:</strong> Alta (infraestructura tecnológica avanzada, sistemas integrados)</li>
+                        <li><strong>Resistencia Profesional:</strong> Baja (apertura al cambio tecnológico)</li>
+                        <li><strong>Marco Regulatorio:</strong> Establecido y claro</li>
+                        <li><strong>Horizonte Temporal:</strong> 18-24 meses</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Desafío Principal (Dahlmeier 2017)</div>
+                <div class="section-content">
+                    <p><strong>Gap entre investigación y producción:</strong> Los modelos de NLP funcionan bien en laboratorio pero enfrentan desafíos en entornos reales por falta de integración con workflows existentes y resistencia organizacional al cambio.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Riesgos Específicos</div>
+                <div class="section-content">
+                    <ul>
+                        <li class="risk-item">Sobrecarga de información para profesionales ya ocupados</li>
+                        <li class="risk-item">Desconfianza en predicciones automáticas sin explicación clara</li>
+                        <li class="risk-item">Falta de adopción a pesar de recursos disponibles</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Respuestas a las Preguntas</div>
+                <div class="section-content">
+                    <p><strong>Usuarios finales:</strong> Psicólogos clínicos (primario), médicos generales (triaje), equipos multidisciplinarios</p>
+                    <p><strong>Stakeholders:</strong> Ministerio (gestión), pacientes (beneficiarios), profesionales (operadores), administradores (operativa)</p>
+                    <p><strong>Integración:</strong> Dashboard integrado en sistemas hospitalarios + API RESTful para historiales clínicos electrónicos</p>
+                    <p><strong>Métricas:</strong> Tiempo de detección temprana, tasa de falsos positivos, adopción profesional, mejora en outcomes clínicos</p>
+                    <p><strong>Resistencia:</strong> Baja esperada; mitigar con programa de cambio organizacional y champions internos</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Recomendaciones Concretas</div>
+                <div class="section-content">
+                    <ol>
+                        <li class="recommendation-item">Implementar dashboard integrado en sistemas hospitalarios existentes</li>
+                        <li class="recommendation-item">Desarrollar API RESTful para integración con historiales clínicos electrónicos</li>
+                        <li class="recommendation-item">Capacitación intensiva de 40 horas para profesionales de salud</li>
+                        <li class="recommendation-item">Sistema de métricas en tiempo real: detección temprana, reducción de hospitalizaciones</li>
+                        <li class="recommendation-item">Programa de cambio organizacional con champions internos</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DIAPOSITIVA 3: PROPUESTA DE VALOR - SUPUESTO 2 -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="slide-title">1. Propuesta de Valor - Supuesto 2</div>
+            <div class="slide-subtitle">Escenario: Presupuesto Limitado y Madurez Digital Media</div>
+        </div>
+        <div class="slide-content">
+            <div class="section">
+                <div class="section-title">Supuestos Subyacentes</div>
+                <div class="section-content">
+                    <ul>
+                        <li><strong>Presupuesto:</strong> Limitado (priorización de funcionalidades críticas)</li>
+                        <li><strong>Madurez Digital:</strong> Media (sistemas parcialmente digitalizados)</li>
+                        <li><strong>Resistencia Profesional:</strong> Media (escepticismo moderado)</li>
+                        <li><strong>Marco Regulatorio:</strong> En desarrollo</li>
+                        <li><strong>Horizonte Temporal:</strong> 12-18 meses (implementación gradual)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Desafío Principal (Dahlmeier 2017)</div>
+                <div class="section-content">
+                    <p><strong>Falta de recursos para integración:</strong> Con presupuesto limitado, el sistema corre riesgo de quedar como herramienta aislada sin impacto real en workflows clínicos, reduciendo su valor práctico.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Riesgos Específicos</div>
+                <div class="section-content">
+                    <ul>
+                        <li class="risk-item">Herramienta standalone sin adopción real por falta de integración</li>
+                        <li class="risk-item">Escepticismo profesional aumenta sin demostración clara de valor</li>
+                        <li class="risk-item">Marco regulatorio en desarrollo puede retrasar implementación</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Respuestas a las Preguntas</div>
+                <div class="section-content">
+                    <p><strong>Usuarios finales:</strong> Psicólogos clínicos (prioritario), médicos generales (fase 2)</p>
+                    <p><strong>Stakeholders:</strong> Ministerio (financiamiento limitado), profesionales (adopción gradual), administradores (apoyo condicional)</p>
+                    <p><strong>Integración:</strong> Fase 1: standalone con exportación manual → Fase 2: sistema de citas → Fase 3: historiales clínicos</p>
+                    <p><strong>Métricas:</strong> Simplificadas: tiempo de detección, falsos positivos, adopción semanal, feedback cualitativo</p>
+                    <p><strong>Resistencia:</strong> Media; mitigar con piloto controlado, comité de adopción y demostración de valor temprano</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Recomendaciones Concretas</div>
+                <div class="section-content">
+                    <ol>
+                        <li class="recommendation-item">MVP con funcionalidad core: análisis y alertas básicas</li>
+                        <li class="recommendation-item">Piloto en 3 centros de salud con seguimiento intensivo</li>
+                        <li class="recommendation-item">Capacitación básica de 8 horas + material de autoaprendizaje</li>
+                        <li class="recommendation-item">Métricas simplificadas: uso semanal y feedback cualitativo</li>
+                        <li class="recommendation-item">Comité de adopción con representantes de cada centro piloto</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DIAPOSITIVA 4: PROPUESTA DE VALOR - SUPUESTO 3 -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="slide-title">1. Propuesta de Valor - Supuesto 3</div>
+            <div class="slide-subtitle">Escenario: Presupuesto Muy Limitado y Baja Madurez Digital</div>
+        </div>
+        <div class="slide-content">
+            <div class="section">
+                <div class="section-title">Supuestos Subyacentes</div>
+                <div class="section-content">
+                    <ul>
+                        <li><strong>Presupuesto:</strong> Muy limitado (solo desarrollo esencial)</li>
+                        <li><strong>Madurez Digital:</strong> Baja (procesos mayormente manuales)</li>
+                        <li><strong>Resistencia Profesional:</strong> Alta (desconfianza en tecnología)</li>
+                        <li><strong>Marco Regulatorio:</strong> Inexistente o ambiguo</li>
+                        <li><strong>Horizonte Temporal:</strong> 24-36 meses (implementación muy gradual)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Desafío Principal (Dahlmeier 2017)</div>
+                <div class="section-content">
+                    <p><strong>Resistencia organizacional extrema:</strong> En entornos con baja madurez digital y alta resistencia, incluso sistemas técnicamente sólidos fallan por falta de adopción. El desafío es más cultural que técnico.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Riesgos Específicos</div>
+                <div class="section-content">
+                    <ul>
+                        <li class="risk-item">Miedo a reemplazo de juicio clínico por algoritmos</li>
+                        <li class="risk-item">Sobrecarga de trabajo adicional (tiempo de aprendizaje)</li>
+                        <li class="risk-item">Falta de confianza en precisión del sistema</li>
+                        <li class="risk-item">Resistencia sindical a cambios en procesos</li>
+                        <li class="risk-item">Preocupaciones éticas sobre privacidad de datos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Respuestas a las Preguntas</div>
+                <div class="section-content">
+                    <p><strong>Usuarios finales:</strong> Psicólogos clínicos voluntarios (adopción inicial), expansión gradual</p>
+                    <p><strong>Stakeholders:</strong> Ministerio (apoyo limitado), profesionales (alta resistencia), administradores (neutrales)</p>
+                    <p><strong>Integración:</strong> Herramienta standalone mínima, sin integración inicial; enfoque en validación clínica</p>
+                    <p><strong>Métricas:</strong> Validación clínica exhaustiva, feedback cualitativo, tasa de adopción voluntaria</p>
+                    <p><strong>Resistencia:</strong> Alta; estrategia: sistema como apoyo (no reemplazo), transparencia total, alianzas profesionales</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Recomendaciones Concretas</div>
+                <div class="section-content">
+                    <ol>
+                        <li class="recommendation-item">Prototipo mínimo funcional con validación clínica exhaustiva</li>
+                        <li class="recommendation-item">Programa de sensibilización y educación previo al lanzamiento</li>
+                        <li class="recommendation-item">Capacitación básica de 4 horas + soporte continuo</li>
+                        <li class="recommendation-item">Sistema de feedback y mejora continua con profesionales</li>
+                        <li class="recommendation-item">Alianzas estratégicas con asociaciones profesionales de psicología</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DIAPOSITIVA 5: DATOS - SUPUESTO 1 -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="slide-title">2. Datos - Supuesto 1</div>
+            <div class="slide-subtitle">Escenario: Datos Abundantes y Alta Calidad</div>
+        </div>
+        <div class="slide-content">
+            <div class="section">
+                <div class="section-title">Supuestos Subyacentes</div>
+                <div class="section-content">
+                    <ul>
+                        <li><strong>Presupuesto:</strong> Amplio (recursos para procesamiento masivo)</li>
+                        <li><strong>Madurez Digital:</strong> Alta (infraestructura de datos robusta)</li>
+                        <li><strong>Resistencia Profesional:</strong> Baja (datos ya disponibles y consentidos)</li>
+                        <li><strong>Marco Regulatorio:</strong> Consentimiento informado ya obtenido</li>
+                        <li><strong>Horizonte Temporal:</strong> 12-18 meses (entrenamiento y validación)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Desafío Principal (Dahlmeier 2017)</div>
+                <div class="section-content">
+                    <p><strong>Sesgos ocultos en datos aparentemente buenos:</strong> Incluso con datasets grandes y de alta calidad, los sesgos demográficos, lingüísticos y de selección pueden pasar desapercibidos y generar modelos que fallan en producción con poblaciones subrepresentadas.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Riesgos Específicos</div>
+                <div class="section-content">
+                    <ul>
+                        <li class="risk-item">Sesgos demográficos no detectados (edad, género, NSE)</li>
+                        <li class="risk-item">Sesgos lingüísticos (variantes del español chileno, modismos)</li>
+                        <li class="risk-item">Sesgos de selección (sobrerrepresentación de ciertos perfiles de pacientes)</li>
+                        <li class="risk-item">Desbalance de clases no alineado con prevalencia real</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Respuestas a las Preguntas</div>
+                <div class="section-content">
+                    <p><strong>Disponibilidad y calidad:</strong> >100,000 transcripciones etiquetadas, alta calidad, validación con inter-annotator agreement</p>
+                    <p><strong>Privacidad y regulación:</strong> Consentimiento ya obtenido, cumplimiento GDPR y Ley 19.628, anonimización implementada</p>
+                    <p><strong>Sesgos:</strong> Demográficos (estratificación), lingüísticos (variantes chilenas), selección (análisis de representatividad)</p>
+                    <p><strong>Desbalance:</strong> Mitigar con sampling balanceado y métricas apropiadas (F1-score, AUC-ROC)</p>
+                    <p><strong>Generalización:</strong> Buena cobertura inicial; validar con test independiente y monitoreo de drift</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Recomendaciones Concretas</div>
+                <div class="section-content">
+                    <ol>
+                        <li class="recommendation-item">Análisis de sesgos sistemático con herramientas de fairness</li>
+                        <li class="recommendation-item">Estrategia de sampling balanceado para clases minoritarias</li>
+                        <li class="recommendation-item">Validación cruzada estratificada por variables demográficas</li>
+                        <li class="recommendation-item">Dataset de test independiente con distribución representativa</li>
+                        <li class="recommendation-item">Monitoreo continuo de drift en producción</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DIAPOSITIVA 6: DATOS - SUPUESTO 2 -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="slide-title">2. Datos - Supuesto 2</div>
+            <div class="slide-subtitle">Escenario: Datos Limitados y Calidad Media</div>
+        </div>
+        <div class="slide-content">
+            <div class="section">
+                <div class="section-title">Supuestos Subyacentes</div>
+                <div class="section-content">
+                    <ul>
+                        <li><strong>Presupuesto:</strong> Limitado (priorización de técnicas eficientes)</li>
+                        <li><strong>Madurez Digital:</strong> Media (infraestructura básica de datos)</li>
+                        <li><strong>Resistencia Profesional:</strong> Media (preocupación por calidad de datos)</li>
+                        <li><strong>Marco Regulatorio:</strong> Consentimiento parcial, requiere ampliación</li>
+                        <li><strong>Horizonte Temporal:</strong> 18-24 meses (recolección + entrenamiento)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Desafío Principal (Dahlmeier 2017)</div>
+                <div class="section-content">
+                    <p><strong>Datos insuficientes para modelos complejos:</strong> Con datasets limitados, los modelos de deep learning fallan por overfitting. Se requiere balance entre complejidad del modelo y cantidad de datos, recurriendo a técnicas de transfer learning y data augmentation.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Riesgos Específicos</div>
+                <div class="section-content">
+                    <ul>
+                        <li class="risk-item">Overfitting con modelos complejos en datos limitados</li>
+                        <li class="risk-item">Desbalance de clases: 15% en datos vs. 5% en población real</li>
+                        <li class="risk-item">Falta de generalización a poblaciones subrepresentadas (rural, vulnerable)</li>
+                        <li class="risk-item">Ruido en transcripciones afecta calidad del modelo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Respuestas a las Preguntas</div>
+                <div class="section-content">
+                    <p><strong>Disponibilidad y calidad:</strong> 10,000-50,000 transcripciones, calidad media, requiere limpieza y validación</p>
+                    <p><strong>Privacidad y regulación:</strong> Consentimiento parcial, ampliar proceso, cumplimiento GDPR y Ley 19.628</p>
+                    <p><strong>Sesgos:</strong> Geográficos (mayormente urbano), demográficos (NSE medio-alto), lingüísticos (variantes limitadas)</p>
+                    <p><strong>Desbalance:</strong> 15% positivos en datos vs. 5% real; estrategia: SMOTE + undersampling, métricas F1-score y AUC-ROC</p>
+                    <p><strong>Generalización:</strong> Limitada inicialmente; solución: recolección dirigida, validación externa en centros diversos</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Recomendaciones Concretas</div>
+                <div class="section-content">
+                    <ol>
+                        <li class="recommendation-item">Data augmentation con técnicas de NLP (parafraseo, back-translation)</li>
+                        <li class="recommendation-item">Transfer learning desde modelos pre-entrenados en español</li>
+                        <li class="recommendation-item">Campaña de recolección de datos en zonas subrepresentadas</li>
+                        <li class="recommendation-item">Modelos ensemble para robustez con datos limitados</li>
+                        <li class="recommendation-item">Validación externa en centros no incluidos en entrenamiento</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DIAPOSITIVA 7: DATOS - SUPUESTO 3 -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="slide-title">2. Datos - Supuesto 3</div>
+            <div class="slide-subtitle">Escenario: Datos Muy Limitados y Calidad Baja</div>
+        </div>
+        <div class="slide-content">
+            <div class="section">
+                <div class="section-title">Supuestos Subyacentes</div>
+                <div class="section-content">
+                    <ul>
+                        <li><strong>Presupuesto:</strong> Muy limitado (prioridad en recolección y cumplimiento)</li>
+                        <li><strong>Madurez Digital:</strong> Baja (infraestructura de datos básica)</li>
+                        <li><strong>Resistencia Profesional:</strong> Alta (preocupación por privacidad y calidad)</li>
+                        <li><strong>Marco Regulatorio:</strong> Consentimiento no obtenido, requiere proceso completo</li>
+                        <li><strong>Horizonte Temporal:</strong> 24-36 meses (recolección + cumplimiento + desarrollo)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Desafío Principal (Dahlmeier 2017)</div>
+                <div class="section-content">
+                    <p><strong>Barreras regulatorias y de datos simultáneas:</strong> Con datos muy limitados y marco regulatorio ausente, el proyecto enfrenta un doble desafío: no puede avanzar técnicamente sin datos, pero no puede recolectar datos sin cumplimiento regulatorio. El riesgo es parálisis del proyecto.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Riesgos Específicos</div>
+                <div class="section-content">
+                    <ul>
+                        <li class="risk-item">Datos insuficientes para cualquier modelo ML moderno (<10,000 transcripciones)</li>
+                        <li class="risk-item">Alto ruido en transcripciones automáticas no revisadas</li>
+                        <li class="risk-item">Sesgos fuertes por representatividad muy limitada</li>
+                        <li class="risk-item">Cumplimiento regulatorio bloquea recolección de datos</li>
+                        <li class="risk-item">Infraestructura limitada requiere inversión significativa</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Respuestas a las Preguntas</div>
+                <div class="section-content">
+                    <p><strong>Disponibilidad y calidad:</strong> <10,000 transcripciones, calidad baja, alto ruido, requiere pipeline robusto de limpieza</p>
+                    <p><strong>Privacidad y regulación:</strong> Consentimiento no obtenido; GDPR y Ley 19.628 requieren proceso completo; anonimización obligatoria; comité de ética necesario</p>
+                    <p><strong>Sesgos:</strong> Muy fuertes (solo algunos centros), demográficos y geográficos severos, lingüísticos limitados</p>
+                    <p><strong>Desbalance:</strong> Desconocido sin datos suficientes; requerirá análisis post-recolección</p>
+                    <p><strong>Generalización:</strong> Muy limitada; requiere campaña masiva de recolección con representatividad</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Recomendaciones Concretas</div>
+                <div class="section-content">
+                    <ol>
+                        <li class="recommendation-item">Cumplimiento regulatorio como prioridad #1 antes de desarrollo técnico</li>
+                        <li class="recommendation-item">Enfoque híbrido: modelos basados en reglas + ML ligero (logistic regression, SVM)</li>
+                        <li class="recommendation-item">Federated learning para entrenar sin centralizar datos</li>
+                        <li class="recommendation-item">Campaña masiva de recolección de datos con incentivos éticos</li>
+                        <li class="recommendation-item">Pipeline robusto de limpieza y validación de calidad</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

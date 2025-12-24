@@ -1,0 +1,70 @@
+Prompt para Análisis del Caso Aplicado - NLP para Detección de Depresión
+Actúa como un consultor experto en implementación de soluciones de NLP en el sector salud, con conocimiento profundo del paper "On the challenges of translating NLP research into commercial products" (Dahlmeier, 2017).
+CONTEXTO DEL CASO
+El Ministerio de Salud requiere desarrollar un sistema de NLP para detección temprana de riesgo de depresión mediante:
+
+Input: Transcripciones de sesiones paciente-psicólogo(a) (audio→texto)
+Output: Clasificación binaria de riesgo de depresión
+Objetivo: Activar planes de tratamiento preventivo
+
+TU TAREA
+Analiza críticamente este caso y proporciona recomendaciones estructuradas en 3 dimensiones:
+1. PROPUESTA DE VALOR
+Analiza:
+
+Usuarios finales: ¿Quiénes usarán el sistema? (psicólogos, médicos generales, pacientes)
+Stakeholders clave: Ministerio, pacientes, profesionales de salud, administradores hospitalarios
+Integración con procesos existentes: ¿Cómo se incorpora al flujo de trabajo clínico actual?
+Métricas de éxito: ¿Cómo medimos el impacto real más allá de accuracy?
+Resistencia al cambio: ¿Qué barreras organizacionales podrían surgir?
+
+2. DATOS
+Evalúa críticamente:
+
+Disponibilidad y calidad: Volumen, representatividad, ruido en transcripciones
+Privacidad y regulación: GDPR, leyes chilenas de datos sensibles, consentimiento informado
+Sesgos potenciales:
+
+Demográficos (edad, género, nivel socioeconómico)
+Lingüísticos (variantes del español chileno, modismos)
+De selección (¿qué pacientes tienen diagnóstico etiquetado?)
+
+
+Desbalance de clases: Prevalencia de depresión en los datos vs población real
+Generalización: ¿Los datos representan la diversidad de pacientes del sistema público?
+
+3. OTROS FACTORES RELEVANTES
+Considera:
+
+Explicabilidad (XAI): ¿Cómo justificar predicciones a profesionales de salud?
+Escalabilidad técnica: Infraestructura para procesar miles de sesiones
+Costos: Desarrollo, implementación, mantención, entrenamiento de usuarios
+Validación clínica: ¿Cómo demostrar validez médica y no solo técnica?
+Gestión de errores: Impacto de falsos positivos/negativos en vidas humanas
+Actualización del modelo: Drift temporal en lenguaje y presentación de síntomas
+Aspectos éticos: Autonomía del paciente, estigmatización, sobre-dependencia tecnológica
+
+SUPUESTOS A EXPLICITAR
+Para cada recomendación, indica qué supones sobre:
+
+Presupuesto disponible (limitado/amplio)
+Madurez digital del Ministerio
+Resistencia/apertura de profesionales de salud
+Marco regulatorio existente
+Horizonte temporal de implementación
+
+FORMATO DE RESPUESTA
+Para cada dimensión:
+
+Desafío principal (según Dahlmeier 2017)
+Riesgos específicos para este caso
+Recomendaciones concretas (3-5 acciones prioritarias)
+Supuestos subyacentes
+
+CRITERIOS DE CALIDAD
+
+Conecta explícitamente con conceptos del paper de Dahlmeier
+Balancea viabilidad técnica con impacto real
+Considera el contexto específico de salud pública en Chile
+Propone soluciones pragmáticas, no solo ideales
+Anticipa problemas antes de la implementación
